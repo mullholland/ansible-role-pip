@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    pip_packages:
+      - "python-dateutil"
+
+  roles:
+    - role: "ansible-role-pip"

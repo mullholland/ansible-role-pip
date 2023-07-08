@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  author: Mullholland
+  namespace: mullholland
+  role_name: python_pip
+  description: install and configure virtual environments with pip
+  license: MIT
+  company: none
+  min_ansible_version: "2.10"
+
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Amazon
+      versions:
+        - Candidate
+    - name: Fedora
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+
+  galaxy_tags:
+    - development
+    - packaging
+    - system
+
+dependencies: []

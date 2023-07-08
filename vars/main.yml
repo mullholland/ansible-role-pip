@@ -1,0 +1,59 @@
+---
+# Initialise empty for later merging
+pip_packages_merged: []
+
+pip_os_packages_map:
+  CentOS:
+    "7":
+      - "python2-pip"
+      - "python-setuptools"
+    "8":
+      - "python3-pip"
+      - "python3-setuptools"
+    "9":
+      - "python3-pip"
+      - "python3-setuptools"
+  RedHat:
+    "7":
+      - "python2-pip"
+      - "python-setuptools"
+    "8":
+      - "python3-pip"
+      - "python3-setuptools"
+    "9":
+      - "python3-pip"
+      - "python3-setuptools"
+  Amazon:
+    - "python2-pip"
+    - "python-setuptools"
+  default:
+    - "python3-pip"
+    - "python3-setuptools"
+# yamllint disable-line rule:line-length
+pip_os_packages: "{{ pip_os_packages_map[ansible_distribution][ansible_distribution_major_version] | default(pip_os_packages_map[ansible_distribution]) | default(pip_os_packages_map['default']) }}"
+
+pip_package_map:
+  CentOS:
+    "7":
+      - "pip==20.3.4"
+    "8":
+      - "pip"
+      - "setuptools"
+    "9":
+      - "pip"
+      - "setuptools"
+  RedHat:
+    "7":
+      - "pip==20.3.4"
+    "8":
+      - "pip"
+      - "setuptools"
+    "9":
+      - "pip"
+      - "setuptools"
+  default:
+    - "pip"
+    - "setuptools"
+
+# yamllint disable-line rule:line-length
+pip_package: "{{ pip_package_map[ansible_distribution][ansible_distribution_major_version] | default(pip_package_map[ansible_distribution]) | default(pip_package_map['default']) }}"

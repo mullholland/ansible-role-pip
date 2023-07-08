@@ -1,0 +1,22 @@
+---
+# By default no modules should be installed. Note: This does not work on Debian Bookworm.
+# See https://peps.python.org/pep-0668/
+
+# WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour
+# with the system package manager. It is recommended to use a virtual environment
+# instead: https://pip.pypa.io/warnings/venv
+# For example the variables `python_pip_venvs` down below
+# Define pip packages
+pip_packages: []
+#  - "python-dateutil"
+#  - "python-dateutil==0.11"
+#  - "python-dateutil>=1.1,<=2.1"
+#  - "python-dateutil>=1"
+pip_packages_group: []
+pip_packages_host: []
+
+# Update pip using pip before installing packages
+pip_update: true
+
+# You can use something other than the default pip binary.
+# python_pip_executable: pip3
