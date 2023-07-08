@@ -34,6 +34,7 @@
     state: "latest"  # noqa package-latest
   when:
     - pip_update | bool
+    - ansible_distribution_release != "bookworm"
 
 - name: Install packages via pip
   ansible.builtin.pip:
