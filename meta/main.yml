@@ -2,7 +2,7 @@
 galaxy_info:
   author: Mullholland
   namespace: mullholland
-  role_name: python_pip
+  role_name: pip
   description: install and configure virtual environments with pip
   license: MIT
   company: none
