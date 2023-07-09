@@ -2,8 +2,8 @@
 galaxy_info:
   author: Mullholland
   namespace: mullholland
-  role_name: python_pip
-  description: install and configure virtual environments with pip
+  role_name: pip
+  description: install packages with pip
   license: MIT
   company: none
   min_ansible_version: "2.10"
