@@ -1,6 +1,6 @@
 # [pip](#pip)
 
-install and configure virtual environments with pip
+install packages with pip
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
