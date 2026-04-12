@@ -8,14 +8,14 @@
 # https://docs.ansible.com/ansible/latest/modules/pip_module.html
 # The setuptools package must be installed for both the Ansible Python
 # interpreter and for the version of Python specified by this option.
-- name: install python2-setuptools for python2 interpreter
+- name: Install python2-setuptools for python2 interpreter
   when: (ansible_python_version is version('3.0.0', '<'))
   block:
     - name: Debug ansible_python_version
       ansible.builtin.debug:
         msg: "ansible_python_version => {{ ansible_python_version }}"
 
-    - name: install python2-setuptools for python2 interpreter
+    - name: Install python2-setuptools for python2 interpreter
       ansible.builtin.package:
         name: python-setuptools
         state: present
@@ -28,13 +28,13 @@
     - "{{ pip_packages_group }}"
     - "{{ pip_packages_host }}"
 
-- name: update pip
+- name: Update pip
   ansible.builtin.pip:
     name: "{{ pip_package }}"
     state: "latest"  # noqa package-latest
   when:
     - pip_update | bool
-    - ansible_distribution_release != "bookworm"
+    - ansible_facts['distribution_release'] != "bookworm"
 
 - name: Install packages via pip
   ansible.builtin.pip:
@@ -42,4 +42,4 @@
     state: "{{ pip_packages_state | default('present') }}"
     extra_args: "{{ pip_packages_args | default(omit) }}"
   when:
-    - ansible_distribution_release != "bookworm"
+    - ansible_facts['distribution_release'] != "bookworm"

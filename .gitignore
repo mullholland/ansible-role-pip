@@ -1,6 +1,13 @@
+.ansible
 .molecule
 *.log
 *.swp
 .tox
 .cache
 .DS_Store
+AGENTS.md
+Agents.md
+agents.md
+AGENT.md
+Agent.md
+agent.md

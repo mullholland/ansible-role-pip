@@ -3,21 +3,12 @@ galaxy_info:
   author: Mullholland
   namespace: mullholland
   role_name: pip
-  description: install packages with pip
+  description: Installs python pip and packages with pip
   license: MIT
   company: none
   min_ansible_version: "2.10"
 
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Amazon
-      versions:
-        - Candidate
-    - name: Fedora
-      versions:
-        - all
     - name: Ubuntu
       versions:
         - all

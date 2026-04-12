@@ -3,9 +3,6 @@
   hosts: all
   become: true
   gather_facts: true
-  vars:
-    pip_packages:
-      - "python-dateutil"
 
   roles:
-    - role: "ansible-role-pip"
+    - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"
