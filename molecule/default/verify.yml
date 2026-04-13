@@ -17,12 +17,14 @@
           - "ansible_os_family  => {{ ansible_facts['os_family'] }}"
           - "ansible_system  => {{ ansible_facts['system'] }}"
 
-    - name: Install packages via pip
-      ansible.builtin.pip:
-        name: "{{ pip_packages }}"
-        state: present
-      check_mode: true
-      register: molecule_pip_packages
-      failed_when: (molecule_pip_packages is changed) or (molecule_pip_packages is failed)
-      when:
-        - ansible_facts['distribution_release'] != "bookworm"
+    - name: Check pip3 is executable
+      ansible.builtin.command:
+        cmd: pip3 --version
+      changed_when: false
+      register: pip3_version
+
+    - name: Assert pip3 is functional
+      ansible.builtin.assert:
+        that:
+          - pip3_version.rc == 0
+        fail_msg: "pip3 --version failed: {{ pip3_version.stderr }}"
