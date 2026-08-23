@@ -3,7 +3,7 @@ galaxy_info:
   author: Mullholland
   namespace: mullholland
   role_name: pip
-  description: Installs python pip and packages with pip
+  description: Installs python pip and setuptools via the OS package manager
   license: MIT
   company: none
   min_ansible_version: "2.10"
