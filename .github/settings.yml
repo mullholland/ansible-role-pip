@@ -3,6 +3,6 @@
 # Ansible managed
 #
 repository:
-  description: Installs python pip and packages with pip
+  description: Installs python pip and setuptools via the OS package manager
   homepage: https://mullholland.net
   topics: development, packaging, system, ansible, molecule, playbook
